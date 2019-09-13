@@ -1,5 +1,6 @@
 #include "doubly_linked_list.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 IntegerListItem * initializeIntegerList(void){
 
@@ -122,6 +123,65 @@ IntegerListItem * removeIntegerAt(IntegerListItem * list_pointer, int index){
 
 }
 
+IntegerListItem * sortIntegerListAsc(IntegerListItem * list_pointer){
+
+    IntegerListItem * fixed = list_pointer;
+    IntegerListItem * compare = list_pointer;
+    int temp;
+    int list_length = getListLength(list_pointer);
+    int i, j;
+     for(i = 0; i < list_length; i++){
+        for(j = 0; j < list_length - 1; j++){
+
+            if(fixed -> value < compare -> value){
+                temp = fixed -> value;
+                fixed -> value = compare -> value;
+                compare -> value = temp;
+
+            }
+
+            compare =  compare -> next;
+
+        }
+        compare = list_pointer;
+        fixed = fixed -> next;
+
+    }
+
+    return list_pointer;
+
+}
+
+
+IntegerListItem * sortIntegerListDesc(IntegerListItem * list_pointer){
+
+    IntegerListItem * fixed = list_pointer;
+    IntegerListItem * compare = list_pointer;
+    int temp;
+    int list_length = getListLength(list_pointer);
+    int i, j;
+     for(i = 0; i < list_length; i++){
+        for(j = 0; j < list_length - 1; j++){
+
+            if(fixed -> value > compare -> value){
+                temp = fixed -> value;
+                fixed -> value = compare -> value;
+                compare -> value = temp;
+
+            }
+
+            compare =  compare -> next;
+
+        }
+        compare = list_pointer;
+        fixed = fixed -> next;
+
+    }
+
+    return list_pointer;
+
+}
+
 int getIntegerAt(IntegerListItem * list_pointer, int index){
 
     IntegerListItem * current_item = list_pointer;
@@ -144,8 +204,19 @@ int getIntegerAt(IntegerListItem * list_pointer, int index){
 
         return current_item -> value;
     }
-    printf("Index out of range.");
-    exit(-1);
+
+    return NULL;
+
+}
+
+int getListLength(IntegerListItem * list_pointer){
+    IntegerListItem * current_item = list_pointer;
+    int length = 0;
+    while(current_item -> next != NULL){
+        current_item = current_item -> next;
+        length++;
+    }
+    return length + 1;
 }
 
 void showAllInIntegerList(IntegerListItem * list_pointer){
@@ -168,3 +239,15 @@ void showAllInIntegerList(IntegerListItem * list_pointer){
 
 }
 
+IntegerListItem * destroyIntegerList(IntegerListItem * list_pointer){
+
+    IntegerListItem * current_item = list_pointer -> next;
+    while(current_item != NULL){
+        free(list_pointer);
+        list_pointer = current_item;
+        current_item = list_pointer -> next;
+    }
+
+    return list_pointer;
+
+}
