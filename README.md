@@ -27,20 +27,20 @@ Given a pointer to the start of the list, a value to insert and an index, it ins
 #### ```IntegerListItem * removeIntegerAt(IntegerListItem * list_pointer, int index)```
 Given a pointer to the start of the list and an index, removes the item at that position and returns a pointer to the start of it.
 
-### ```IntegerListItem * sortIntegerListAsc(IntegerListItem * list_pointer)```
+#### ```IntegerListItem * sortIntegerListAsc(IntegerListItem * list_pointer)```
 Given a pointer to the start of the list, sorts the values of the IntegerListItems in ascending order.
 
-### ```IntegerListItem * sortIntegerListDesc(IntegerListItem * list_pointer)```
+#### ```IntegerListItem * sortIntegerListDesc(IntegerListItem * list_pointer)```
 Given a pointer to the start of the list, sorts the values of the IntegerListItems in descending order.
 
 #### ```int getIntegerAt(IntegerListItem * list_pointer, int index)```
 Given a pointer to the start of the list and an index, returns the integer value that is contained on IntegerListItem's value attribute.
 
-### ```int getListLength(IntegerListItem * list_pointer)```
+#### ```int getListLength(IntegerListItem * list_pointer)```
 Given a pointer to the start of the list, returns the length(number of elements) of the list.
 
 #### ``` void showAllInIntegerList(IntegerListItem * list_pointer)```
 Given a pointer to the start of the list, print all its values.
 
-### ```IntegerListItem * destroyIntegerList(IntegerListItem * list_pointer)```
+#### ```IntegerListItem * destroyIntegerList(IntegerListItem * list_pointer)```
 Given a pointer to the start of the list, deallocates all ItemListItem pointers and returns a freed pointer.
