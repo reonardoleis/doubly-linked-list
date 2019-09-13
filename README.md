@@ -1,5 +1,5 @@
 # doubly-linked-list
-C doubly linked list implementation.
+C doubly linked list implementation. To install, simply drop the files inside your main file's folder and include "doubly_linked_list.c"
 
 # Documentation
 
