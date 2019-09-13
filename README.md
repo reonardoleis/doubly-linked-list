@@ -16,9 +16,9 @@ C doubly linked list implementation.
 
 and then you are ready to use your doubly linked integer list.
 
-## Functions: 
+## Functions
 
-### IntegerListItem * initializeIntegerList(void)
+### ```C IntegerListItem * initializeIntegerList(void)```
 Simply returns NULL.
 
 ### IntegerListItem * insertIntegerAt(IntegerListItem * list_pointer, int value, int index)
