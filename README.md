@@ -3,7 +3,17 @@ C doubly linked list implementation. To install, simply drop the files inside yo
 
 # Documentation
 
-  A IntegerListItem is a data structure that contains an integer as its value attribute, a pointer to the next IntegerListItem and a pointer to the previous IntegerListItem.
+  A IntegerListItem is a data structure that contains an integer as its value attribute, a pointer to the next IntegerListItem and a pointer to the previous IntegerListItem. This is what it looks like:
+  
+```C
+  typedef struct IntegerListItem {
+      int value;
+      struct IntegerListItem * next;
+      struct IntegerListItem * previous;
+  } IntegerListItem;
+```
+
+  If an element is empty(like the previous of the first element or the next of the last element), it should point to NULL.
   
   To initialize a list, you have to do the following:
 
